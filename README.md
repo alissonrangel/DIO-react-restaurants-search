@@ -1,5 +1,33 @@
 # Getting Started with Create React App
 
+# Recursos Utilizados:
+## styled-components
+## Para fazer o Carousel:
+### @material/react-text-field
+* page: https://www.npmjs.com/package/@material/react-text-field
+* github: https://github.com/material-components/material-components-web-react
+* github: https://github.com/material-components/material-components-web-react/tree/master/packages/text-field
+* npm install @material/react-text-field
+* import '@material/react-text-field/dist/text-field.css';
+
+### @material/react-material-icon
+* page: https://www.npmjs.com/package/@material/react-material-icon
+* npm i @material/react-material-icon
+* import '@material/react-material-icon/dist/material-icon.css';
+* <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+*
+
+### react-slick - 
+ * page: https://www.npmjs.com/package/react-slick
+ * npm install react-slick --save
+ * npm install slick-carousel
+ * import "slick-carousel/slick/slick.css";
+ * import "slick-carousel/slick/slick-theme.css";
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
