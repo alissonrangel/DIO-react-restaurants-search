@@ -18,12 +18,18 @@
       rel="stylesheet">
 *
 
-### react-slick - 
+### react-slick 
  * page: https://www.npmjs.com/package/react-slick
  * npm install react-slick --save
  * npm install slick-carousel
  * import "slick-carousel/slick/slick.css";
  * import "slick-carousel/slick/slick-theme.css";
+
+ ### react-rating-stars-component
+ * page: https://www.npmjs.com/package/react-rating-stars-component
+ * npm install react-rating-stars-component --save
+
+
 
 
 
