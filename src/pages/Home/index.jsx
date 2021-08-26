@@ -4,7 +4,7 @@ import MaterialIcon from '@material/react-material-icon';
 import Slider from "react-slick";
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
-import { Card } from '../../components';
+import { Card, RestaurantCard } from '../../components';
 import { Container, Carousel, Search, Logo, Wrapper, Map, CarouselTitle } from './styles'
 
 const images = [
@@ -54,6 +54,7 @@ var settings = {
             <Card photo={restaurante} title="Nome sei lá"/>
           </Carousel>                    
         </Search>
+        <RestaurantCard />
       </Container>
       <Map>
         {/* <Slider {...settings}>
