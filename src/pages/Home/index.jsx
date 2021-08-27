@@ -4,7 +4,7 @@ import MaterialIcon from '@material/react-material-icon';
 import Slider from "react-slick";
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
-import { Card, RestaurantCard } from '../../components';
+import { Card, RestaurantCard, Modal } from '../../components';
 import { Container, Carousel, Search, Logo, Wrapper, Map, CarouselTitle } from './styles'
 
 const images = [
@@ -16,16 +16,17 @@ const images = [
 
 const Home = () => {
   
-const [inputValue, setInputValue] = useState('cachorro')
+  const [inputValue, setInputValue] = useState('cachorro');
+  const [modalOpened, setModalOpened] = useState(false);
 
-var settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-  adaptiveHeight: true
-};
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    adaptiveHeight: true
+  };
 
 
 
@@ -52,7 +53,8 @@ var settings = {
             <Card photo={restaurante} title="Nome sei lá"/>
             <Card photo={restaurante} title="Nome sei lá"/>
             <Card photo={restaurante} title="Nome sei lá"/>
-          </Carousel>                    
+          </Carousel> 
+          <button onClick={() => setModalOpened(true)}>Abrir modal</button>                   
         </Search>
         <RestaurantCard />
       </Container>
@@ -65,6 +67,7 @@ var settings = {
           ))}
         </Slider> */}
       </Map>
+      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
     </Wrapper>
   );
 };
