@@ -2,7 +2,17 @@
 
 # Recursos Utilizados:
 ## styled-components
-## Para fazer o Carousel:
+## Carousel
+
+
+### Google Maps JavaScript API
+* https://developers.google.com/maps/documentation/javascript/places
+
+### Google Maps React
+* https://www.npmjs.com/package/google-maps-react
+* npm install --save google-maps-react
+
+
 ### @material/react-text-field
 * page: https://www.npmjs.com/package/@material/react-text-field
 * github: https://github.com/material-components/material-components-web-react
@@ -16,7 +26,6 @@
 * import '@material/react-material-icon/dist/material-icon.css';
 * <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-*
 
 ### react-slick 
  * page: https://www.npmjs.com/package/react-slick
