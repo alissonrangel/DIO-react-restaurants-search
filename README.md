@@ -4,6 +4,8 @@
 ## styled-components
 ## Carousel
 
+### Google Cloud Platform
+* https://console.cloud.google.com
 
 ### Google Maps JavaScript API
 * https://developers.google.com/maps/documentation/javascript/places

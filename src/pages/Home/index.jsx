@@ -16,7 +16,8 @@ const images = [
 
 const Home = () => {
   
-  const [inputValue, setInputValue] = useState('cachorro');
+  const [inputValue, setInputValue] = useState('');
+  const [query, setQuery] = useState(null);
   const [modalOpened, setModalOpened] = useState(false);
 
   var settings = {
@@ -28,7 +29,11 @@ const Home = () => {
     adaptiveHeight: true
   };
 
-
+  function handleKeyPress(e) {
+    if( e.key === 'Enter' ){
+      setQuery(inputValue);
+    }
+  }
 
   return (
     <Wrapper>
@@ -43,6 +48,7 @@ const Home = () => {
             >
             <Input
             value={inputValue}
+            onKeyPress={handleKeyPress}
             onChange={(e) => setInputValue(e.target.value)} />
           </TextField>
           <CarouselTitle>Na sua Área</CarouselTitle>          
@@ -58,7 +64,7 @@ const Home = () => {
         </Search>
         <RestaurantCard />
       </Container>
-      <Map>
+      <Map query={query}>
         {/* <Slider {...settings}>
           {images.map((img) => (
             <div>
