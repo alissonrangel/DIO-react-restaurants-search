@@ -40,6 +40,10 @@
  * page: https://www.npmjs.com/package/react-rating-stars-component
  * npm install react-rating-stars-component --save
 
+ ### redux react-redux
+ * page: https://www.npmjs.com/package/redux
+ * page: https://www.npmjs.com/package/react-redux
+
 
 
 
