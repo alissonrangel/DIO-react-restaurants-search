@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Restaurant, RestaurantInfo, Title, Address, RestaurantPhoto } from './styles';
 import ReactStars from "react-rating-stars-component";
-import restaurant from '../../assets/restaurante-fake.png';
+import restaurante from '../../assets/restaurante-fake.png';
 
-const RestaurantCard = () => {
+const RestaurantCard = ({restaurant}) => {
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
@@ -11,22 +11,22 @@ const RestaurantCard = () => {
   return (
     <Restaurant>
       <RestaurantInfo>
-        <Title>Nome do restaurante</Title>
+        <Title>{restaurant.name}</Title>
         <ReactStars
           count={5}
           onChange={ratingChanged}
           size={24}
           isHalf
-          value={4.5}
+          value={restaurant.rating}
           edit={false}
           activeColor="#e7711c"
           emptyIcon={<i className="far fa-star"></i>}
           halfIcon={<i className="fa fa-star-half-alt"></i>}
           fullIcon={<i className="fa fa-star"></i>}          
         />
-        <Address>Rua 24 de janeiro, 1023</Address>
+        <Address>{restaurant.vicinity || restaurant.formatted_address}</Address>
       </RestaurantInfo>
-      <RestaurantPhoto src={restaurant} alt="Foto do restaurante"/>
+      <RestaurantPhoto src={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante} alt="Foto do restaurante"/>
     </Restaurant>
   );
 }
