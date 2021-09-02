@@ -44,9 +44,10 @@
  * page: https://www.npmjs.com/package/redux
  * page: https://www.npmjs.com/package/react-redux
 
-
-
-
+ ### react-lottie lottiefiles
+ * https://www.npmjs.com/package/react-lottie
+ * https://lottiefiles.com/
+ * npm install --save react-lottie
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -117,3 +118,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+comp skeleton p1 8:23

@@ -3,13 +3,13 @@ import { Restaurant, RestaurantInfo, Title, Address, RestaurantPhoto } from './s
 import ReactStars from "react-rating-stars-component";
 import restaurante from '../../assets/restaurante-fake.png';
 
-const RestaurantCard = ({restaurant}) => {
+const RestaurantCard = ({restaurant, onClick}) => {
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
 
   return (
-    <Restaurant>
+    <Restaurant onClick={onClick}>
       <RestaurantInfo>
         <Title>{restaurant.name}</Title>
         <ReactStars
