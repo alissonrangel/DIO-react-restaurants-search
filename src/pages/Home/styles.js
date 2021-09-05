@@ -67,3 +67,8 @@ export const ModalContent = styled.p`
   font-weight: normal;
   line-height: 19px;
 `
+
+export const ModalPhoto = styled.img`
+  width: 200px;
+  margin-bottom: 15px;
+`;

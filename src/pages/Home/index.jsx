@@ -4,8 +4,8 @@ import MaterialIcon from '@material/react-material-icon';
 import Slider from "react-slick";
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
-import { Card, RestaurantCard, Modal, Map, Loader } from '../../components';
-import { Container, Carousel, Search, Logo, Wrapper, CarouselTitle, ModalTitle, ModalContent } from './styles'
+import { Card, RestaurantCard, Modal, Map, Loader, Skeleton } from '../../components';
+import { Container, Carousel, Search, Logo, Wrapper, CarouselTitle, ModalTitle, ModalContent, ModalPhoto } from './styles'
 import {useDispatch, useSelector} from 'react-redux';
 import { Restaurant } from '../../components/RestaurantCard/styles';
 
@@ -79,13 +79,12 @@ const Home = () => {
               </Carousel> 
             </>
           ) : (
-            <>
-            mostrou
-            <Loader />
+            <>            
+              <Loader />
             </>
           )}
           
-          <button onClick={() => setModalOpened(true)}>Abrir modal</button>                   
+          {/* <button onClick={() => setModalOpened(true)}>Abrir modal</button> */}
         </Search>
         { restaurants.map((restaurant)=>(
           <RestaurantCard
@@ -107,10 +106,26 @@ const Home = () => {
       </Map>
       <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} >
         <Loader />
-        <ModalTitle>{restaurantSelected ? restaurantSelected.name : "Sem nome"}</ModalTitle>        
+        {/* <ModalTitle>{restaurantSelected ? restaurantSelected.name : "Sem nome"}</ModalTitle>        
         <ModalContent>{restaurantSelected ? restaurantSelected.formatted_phone_number : "(86) 3333-3334"}</ModalContent>
         <ModalContent>{restaurantSelected ? restaurantSelected.formatted_address : "Rua 12"}</ModalContent>
-        <ModalContent>{restaurantSelected ? (restaurantSelected.opening_hours ? (restaurantSelected.opening_hours.open_now ? "Aberto agora :)" : "Fechado neste momento"): "Fechado neste momento" ) : "Fechado neste momento"}</ModalContent>
+        <ModalContent>{restaurantSelected ? (restaurantSelected.opening_hours ? (restaurantSelected.opening_hours.open_now ? "Aberto agora :)" : "Fechado neste momento"): "Fechado neste momento" ) : "Fechado neste momento"}</ModalContent> */}
+
+        { restaurantSelected ? (
+          <>            
+            <ModalTitle>{restaurantSelected ? restaurantSelected.name : "Sem nome"}</ModalTitle>        
+            <ModalContent>{restaurantSelected ? restaurantSelected.formatted_phone_number : "(86) 3333-3334"}</ModalContent>
+            <ModalContent>{restaurantSelected ? restaurantSelected.formatted_address : "Rua 12"}</ModalContent>
+            <ModalContent>{restaurantSelected ? (restaurantSelected.opening_hours ? (restaurantSelected.opening_hours.open_now ? "Aberto agora :)" : "Fechado neste momento"): "Fechado neste momento" ) : "Fechado neste momento"}</ModalContent>
+          </>
+        ) : (
+          <>
+            <Skeleton width="10px" height="10px"/>
+            <Skeleton width="10px" height="10px"/>
+            <Skeleton width="10px" height="10px"/>
+            <Skeleton width="10px" height="10px"/>
+          </>
+        )}
       </Modal>
     </Wrapper>
   );
