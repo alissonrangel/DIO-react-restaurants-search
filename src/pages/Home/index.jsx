@@ -65,17 +65,17 @@ const Home = () => {
             <>
               <CarouselTitle>Na sua Área</CarouselTitle>          
               <Carousel {...settings}>
+                {/* <Card photo={restaurante} title="Nome do restaurante" />
                 <Card photo={restaurante} title="Nome do restaurante" />
                 <Card photo={restaurante} title="Nome do restaurante" />
-                <Card photo={restaurante} title="Nome do restaurante" />
-                <Card photo={restaurante} title="Nome do restaurante" />
-              {/* { restaurants.map((restaurant)=>(
+                <Card photo={restaurante} title="Nome do restaurante" /> */}
+              { restaurants.map((restaurant)=>(
                 <Card
                   key={restaurant.place_id}
                   photo={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante}
                   title={restaurant.name}
                 />
-              ))} */}
+              ))}
               </Carousel> 
             </>
           ) : (
@@ -88,7 +88,8 @@ const Home = () => {
           <button onClick={() => setModalOpened(true)}>Abrir modal</button>                   
         </Search>
         { restaurants.map((restaurant)=>(
-          <RestaurantCard 
+          <RestaurantCard
+            key={restaurant.place_id} 
             restaurant={restaurant}
             onClick={()=> handleOpenModal(restaurant.place_id)}
           />
@@ -109,7 +110,7 @@ const Home = () => {
         <ModalTitle>{restaurantSelected ? restaurantSelected.name : "Sem nome"}</ModalTitle>        
         <ModalContent>{restaurantSelected ? restaurantSelected.formatted_phone_number : "(86) 3333-3334"}</ModalContent>
         <ModalContent>{restaurantSelected ? restaurantSelected.formatted_address : "Rua 12"}</ModalContent>
-        <ModalContent>{restaurantSelected ? restaurantSelected.opening_hours : "Aberto agora :)"}</ModalContent>
+        <ModalContent>{restaurantSelected ? (restaurantSelected.opening_hours ? (restaurantSelected.opening_hours.open_now ? "Aberto agora :)" : "Fechado neste momento"): "Fechado neste momento" ) : "Fechado neste momento"}</ModalContent>
       </Modal>
     </Wrapper>
   );
