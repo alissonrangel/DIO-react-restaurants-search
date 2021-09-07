@@ -1,8 +1,14 @@
-# Getting Started with Create React App
+# Site criado como atividade do bootcamp Localiza React Developer
+# Site criado a partir da aula do professor Patrick Narciso
+# Site para encontrar restaurantes próximos usando Google Maps
+
+# Acréscimo Realizado
+* Adição de um MiniMap no modal com a localização do restaurante que é selecionado para aparecer no modal
 
 # Recursos Utilizados:
-## styled-components
-## Carousel
+
+### Site com o deploy no netlify
+* https://busca-restaurante-dio.netlify.app/
 
 ### Google Cloud Platform
 * https://console.cloud.google.com
