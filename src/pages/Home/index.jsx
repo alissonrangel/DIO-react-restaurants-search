@@ -7,7 +7,7 @@ import restaurante from '../../assets/restaurante-fake.png';
 import { Card, RestaurantCard, Modal, Map, Loader, Skeleton, MiniMap } from '../../components';
 import { Container, Carousel, Search, Logo, Wrapper, CarouselTitle, ModalTitle, ModalContent, ModalPhoto } from './styles'
 import {useDispatch, useSelector} from 'react-redux';
-import { Restaurant } from '../../components/RestaurantCard/styles';
+
 
 const images = [
   { src: restaurante },
@@ -64,18 +64,14 @@ const Home = () => {
           { restaurants.length > 0 ? (
             <>
               <CarouselTitle>Na sua Área</CarouselTitle>          
-              <Carousel {...settings}>
-                {/* <Card photo={restaurante} title="Nome do restaurante" />
-                <Card photo={restaurante} title="Nome do restaurante" />
-                <Card photo={restaurante} title="Nome do restaurante" />
-                <Card photo={restaurante} title="Nome do restaurante" /> */}
-              { restaurants.map((restaurant)=>(
-                <Card
-                  key={restaurant.place_id}
-                  photo={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante}
-                  title={restaurant.name}
-                />
-              ))}
+              <Carousel {...settings}>                
+                { restaurants.map((restaurant)=>(
+                  <Card
+                    key={restaurant.place_id}
+                    photo={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante}
+                    title={restaurant.name}
+                  />
+                ))}
               </Carousel> 
             </>
           ) : (
@@ -101,7 +97,7 @@ const Home = () => {
             <div style={{ display:'block', position:'relative', top:'10px' }}>
               <MiniMap placeId={restaurantSelected.placeId}/>
             </div>          
-            <div style={{ zIndex:'100', display:'block', position:'relative', top:'200px' }}>
+            <div style={{ zIndex:'100', display:'block', position:'relative', top:'220px' }}>
               <ModalTitle>{restaurantSelected ? restaurantSelected.name : "Sem nome"}</ModalTitle>        
               <ModalContent>{restaurantSelected ? restaurantSelected.formatted_phone_number : "(86) 3333-3334"}</ModalContent>
               <ModalContent>{restaurantSelected ? restaurantSelected.formatted_address : "Rua 12"}</ModalContent>
