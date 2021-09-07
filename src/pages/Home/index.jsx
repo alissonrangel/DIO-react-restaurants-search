@@ -4,7 +4,7 @@ import MaterialIcon from '@material/react-material-icon';
 import Slider from "react-slick";
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
-import { Card, RestaurantCard, Modal, Map, Loader, Skeleton } from '../../components';
+import { Card, RestaurantCard, Modal, Map, Loader, Skeleton, MiniMap } from '../../components';
 import { Container, Carousel, Search, Logo, Wrapper, CarouselTitle, ModalTitle, ModalContent, ModalPhoto } from './styles'
 import {useDispatch, useSelector} from 'react-redux';
 import { Restaurant } from '../../components/RestaurantCard/styles';
@@ -82,9 +82,7 @@ const Home = () => {
             <>            
               <Loader />
             </>
-          )}
-          
-          {/* <button onClick={() => setModalOpened(true)}>Abrir modal</button> */}
+          )}                    
         </Search>
         { restaurants.map((restaurant)=>(
           <RestaurantCard
@@ -95,29 +93,21 @@ const Home = () => {
         ))}
         
       </Container>
-      <Map query={query} placeId={placeId}>
-        {/* <Slider {...settings}>
-          {images.map((img) => (
-            <div>
-              <img src={img.src} />
-            </div>
-          ))}
-        </Slider> */}
+      <Map query={query} placeId={placeId}>        
       </Map>
-      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} >
-        <Loader />
-        {/* <ModalTitle>{restaurantSelected ? restaurantSelected.name : "Sem nome"}</ModalTitle>        
-        <ModalContent>{restaurantSelected ? restaurantSelected.formatted_phone_number : "(86) 3333-3334"}</ModalContent>
-        <ModalContent>{restaurantSelected ? restaurantSelected.formatted_address : "Rua 12"}</ModalContent>
-        <ModalContent>{restaurantSelected ? (restaurantSelected.opening_hours ? (restaurantSelected.opening_hours.open_now ? "Aberto agora :)" : "Fechado neste momento"): "Fechado neste momento" ) : "Fechado neste momento"}</ModalContent> */}
-
+      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} >        
         { restaurantSelected ? (
-          <>            
-            <ModalTitle>{restaurantSelected ? restaurantSelected.name : "Sem nome"}</ModalTitle>        
-            <ModalContent>{restaurantSelected ? restaurantSelected.formatted_phone_number : "(86) 3333-3334"}</ModalContent>
-            <ModalContent>{restaurantSelected ? restaurantSelected.formatted_address : "Rua 12"}</ModalContent>
-            <ModalContent>{restaurantSelected ? (restaurantSelected.opening_hours ? (restaurantSelected.opening_hours.open_now ? "Aberto agora :)" : "Fechado neste momento"): "Fechado neste momento" ) : "Fechado neste momento"}</ModalContent>
-          </>
+          <div style={{ height:'350px', overflow:'hidden' }}>
+            <div style={{ display:'block', position:'relative', top:'10px' }}>
+              <MiniMap placeId={restaurantSelected.placeId}/>
+            </div>          
+            <div style={{ zIndex:'100', display:'block', position:'relative', top:'200px' }}>
+              <ModalTitle>{restaurantSelected ? restaurantSelected.name : "Sem nome"}</ModalTitle>        
+              <ModalContent>{restaurantSelected ? restaurantSelected.formatted_phone_number : "(86) 3333-3334"}</ModalContent>
+              <ModalContent>{restaurantSelected ? restaurantSelected.formatted_address : "Rua 12"}</ModalContent>
+              <ModalContent>{restaurantSelected ? (restaurantSelected.opening_hours ? (restaurantSelected.opening_hours.open_now ? "Aberto agora :)" : "Fechado neste momento"): "Fechado neste momento" ) : "Fechado neste momento"}</ModalContent>
+            </div>          
+          </div>
         ) : (
           <>
             <Skeleton width="10px" height="10px"/>

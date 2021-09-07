@@ -30,7 +30,7 @@ export const MapContainer = (props) => {
     dispatch(setRestaurant(null));
     const request = {
       placeId,
-      fields:['name', 'opening_hours', 'formatted_address','formatted_phone_number'],
+      fields:['name', 'opening_hours', 'formatted_address','formatted_phone_number','geometry'],
     }
 
     service.getDetails(request, (place, status)=>{
