@@ -1,4 +1,4 @@
-# Site criado como atividade do bootcamp Localiza React Developer
+# Site criado como atividade do bootcamp Localiza React Developer da Digital Innovation One
 # Site criado a partir da aula do professor Patrick Narciso
 # Site para encontrar restaurantes próximos usando Google Maps
 
